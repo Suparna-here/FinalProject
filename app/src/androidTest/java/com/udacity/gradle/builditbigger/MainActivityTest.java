@@ -19,6 +19,7 @@ import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
+import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.core.AllOf.allOf;
 
 @RunWith(JUnit4.class)
@@ -75,6 +76,6 @@ public class MainActivityTest {
 
     @After
     public void checkJokeReceivefromAsyncTask() {
-       onView(withId(R.id.joke_title)).check(matches(withText("Joke for Today!")));
+       onView(withId(R.id.joke_textview)).check(matches(not(withText("Server unreachable!"))));
     }
 }
