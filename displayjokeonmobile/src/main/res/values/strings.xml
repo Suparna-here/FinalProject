@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">displayJokeOnMobile</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_fragment">Hello blank fragment</string>
+    <string name="joke_fragment">Joke for Today!</string>
+</resources>
