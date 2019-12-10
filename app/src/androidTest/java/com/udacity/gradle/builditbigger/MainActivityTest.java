@@ -35,36 +35,12 @@ public class MainActivityTest {
         IdlingRegistry.getInstance().register(mIdlingResource);
     }
 
-
-    // this method which runs before each test and will stub all external
-    // intents so all external intents will be blocked
-    /*@Before
-    public void stubAllExternalIntents() {
-        // By default Espresso Intents does not stub any Intents. Stubbing needs to be setup before
-        // every test run. In this case all external Intents will be blocked.
-        intending(not(isInternal())).respondWith(new Instrumentation.ActivityResult(Activity.RESULT_OK, null));
-    }*/
-
-
     @Test
     public void mainActivityBasicTest()
     {
         ViewInteraction sendButton = onView(
                 allOf(withId(R.id.tell_joke_button), withText("Tell Joke"), isDisplayed()));
         sendButton.perform(click());
-
-        /* String joke;
-        Context context = InstrumentationRegistry.getInstrumentation().getContext();
-        new EndpointsAsyncTask().execute(context);
-        try {
-            joke =new EndpointsAsyncTask().execute(context).get();
-            assertNotNull(joke);
-            assertTrue(joke.length() > 0);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }*/
     }
 
     @After
